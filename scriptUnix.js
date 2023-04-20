@@ -1,9 +1,9 @@
-const here = "C:\\Users\\User\\Desktop\\CodeTheFuture\\Day4\\audio\\"
+const here = "./audio/"
 const $ = x => document.querySelectorAll(x);
 
 let wave = new CircularAudioWave(document.getElementById('waveDisplay'));
 wave.gainNode = wave.context.createGain();
-wave.gainNode.gain.setTargetAtTime(0.1, ctx.currentTime, 0.2);
+wave.gainNode.gain.value = 0.1;
 wave.gainNode.connect(wave.context.destination);
 wave.sourceNode.connect(wave.gainNode); 
 const currentPosDom = document.querySelector(".ringed-display");
@@ -14,8 +14,8 @@ const searchOnline = async(e) => {
         res = await ytSearch.search(that.value);
         setTimeout(() => {
             res = res.items[0].id;
-            child_process.spawn(`C:\\Users\\User\\Desktop\\CodeTheFuture\\Day4\\dist\\ytdlp.bat https://www.youtube.com/watch?v=${res}`)
-            console.log(`C:\\Users\\User\\Desktop\\CodeTheFuture\\Day4\\dist\\ytdlp.bat https://www.youtube.com/watch?v=${res}`);
+            child_process.spawn(`cd audio; yt-dlp -x --audio-format mp3 https://www.youtube.com/watch?v=${res}`)
+            console.log(`cd audio; yt-dlp -x --audio-format mp3 https://www.youtube.com/watch?v=${res}`);
         }, 2000);
     }
 }
@@ -34,9 +34,9 @@ const startPlaying = () => {
 const read = path => {
     let contents = fs.readDir(path);
     let fileContents = [];
-    let this_here = path.split("\\").at("-1");
+    let this_here = path.split("/").at("-1");
     contents.forEach(file => {
-        fileContents.push(`${this_here}\\${file}`);
+        fileContents.push(`${this_here}/${file}`);
     });
     return fileContents;
 }
@@ -44,8 +44,8 @@ const read = path => {
 function fillExplorer(mainPath) {
     $("#explorer")[0].innerHTML = ""
     read(mainPath).forEach(path => {
-        if (fs.isFolder(`${here}\\${path}`) === true){
-            fillExplorer(`${here}\\${path}`);
+        if (fs.isFolder(`${here}/${path}`) === true){
+            fillExplorer(`${here}/${path}`);
             console.log(path);
         }
         else {

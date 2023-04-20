@@ -9,6 +9,7 @@
     "youtube-search-api": "^1.1.1"
   },
   "scripts": {
-    "run": "C:\\Users\\User\\AppData\\Local\\Yarn\\bin\\electron ."
+    "run": "C:\\Users\\User\\AppData\\Local\\Yarn\\bin\\electron .",
+    "runUnix": "electron ."
   }
 }
