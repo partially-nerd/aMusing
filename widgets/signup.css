@@ -1,0 +1,81 @@
+.signup{
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: url("../src/bgSignup.jpg");
+    background-size: cover;
+}
+
+.form{
+    height: calc(100% - 20px);
+    position: absolute;
+    right: 0;
+    width: 300px;
+    padding: 10px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(25px);
+    animation: formEnter 1s ease-in-out reverse;
+}
+
+@keyframes formEnter {
+    to {
+        right: -100%;
+    }
+}
+
+.signup-label{
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+}
+
+.form-entry, .submit{
+    display: block;
+    color: white;
+    width: calc(100% - 50px);
+    height: 40px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: transparent;
+    border: 0;
+    outline: 2px dashed transparent;
+    margin-top: 20px;
+    transition: 0.3s outline;
+}
+
+.form-entry:nth-child(1){
+    margin-top: 40px;
+}
+
+.form-entry:focus + label{
+    color: cadetblue;
+    visibility: visible;
+}
+
+.form-entry:focus{
+    outline: 2px dashed cadetblue;
+}
+
+label{
+    font-size: 10px;
+    line-height: 20px;
+    margin-top: -40px;
+    backdrop-filter: blur(25px);
+    padding-left: 20px;
+    color: transparent;
+    padding-right: 20px;
+    visibility: hidden;
+    transition: 0.3s color;
+}
+
+.submit{
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: tomato;
+}

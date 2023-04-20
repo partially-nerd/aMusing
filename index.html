@@ -10,11 +10,27 @@
     <link rel="stylesheet" href="widgets/ringedPercentile.css">
     <link rel="stylesheet" href="widgets/volume-adjust.css">
     <link rel="stylesheet" href="widgets/pane.css">
+    <link rel="stylesheet" href="widgets/signup.css">
     <script src="dist/audiovisualizer.js" defer></script>
     <!-- <script src="script.js" defer></script> -->
     <script src="scriptUnix.js" defer></script>
 </head>
 <body>
+    <div class="signup">
+        <span></span>
+        <form action="" class="form">
+            <span class="signup-label">A-Musing</span>
+            <input type="text" class="form-entry" name="username" placeholder="Adam">
+            <label for="username">First Name</label>
+            <input type="text" class="form-entry" name="lastname" placeholder="Ondra">
+            <label for="username">Last Name</label>
+            <input type="email" class="form-entry" name="email" placeholder="adam.ondra@protonmail.com">
+            <label for="email">Email</label>
+            <input type="date" class="form-entry" name="dob" id="date">
+            <label for="dob">Birth Date</label>
+            <button class="submit">Sign Up</button>
+        </form>
+    </div>
     <div class="sidebar">
         <button class="sidebar-btn" id="close" onclick="window.close()">x</button>
         <span></span>

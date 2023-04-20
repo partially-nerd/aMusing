@@ -74,3 +74,19 @@ const openFile = e => {
 }
 
 fillExplorer(here);
+
+date = new Date(); 
+year = date.getFullYear(); 
+month = date.getMonth(); 
+function pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+month = pad(month, 2)
+day = date.getDate(); 
+$("#date")[0].value = `${year}-${month}-${day}`; day = date.getDate(); $("#date")[0].value = `${year}-${month}-${day}`
+
+// $(".form-entry").forEach(item => {
+//     el.closest("label");
+// })
