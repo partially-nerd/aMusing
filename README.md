@@ -3,6 +3,7 @@
 ## Setup
 ### Dependencies
 - yarn
+- git
 - nodejs
 ### Windows
 - Execute: `git clone https://github.com/partially-nerd/aMusing.git`
