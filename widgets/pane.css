@@ -1,0 +1,51 @@
+.pane-display{
+    height: var(--height);
+    --c1: rgb(141, 245, 184);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    --c2: rgb(120, 212, 240);
+    /* background: linear-gradient(
+        to bottom,
+        var(--c1),
+        var(--c2)
+    ); */
+    background: rgba(0,0,0,0.9);
+    border-radius: 8px;
+    position: relative;
+    outline: 2px solid var(--c1);
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar-track{
+    background: rgba(255, 255, 255, 0.05);
+    width: 10px;
+}
+
+/* .pane-display::before{
+    content: '';
+    background: rgba(255, 255, 255 ,0.1);
+    position: absolute;
+    margin: var(--br-w);
+    height: calc(100% - 2 * var(--br-w));
+    width: calc(100% - 2 * var(--br-w));
+    border-radius: inherit;
+} */
+
+.pane-display::after{
+    content: var(--label);
+    background: linear-gradient(
+        90deg,
+        var(--c1),
+        var(--c2)
+    );
+    opacity: 0.7;
+    position: absolute;
+    top: 4px;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 1000;
+}

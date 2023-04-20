@@ -1,0 +1,36 @@
+.volume-display{
+    height: var(--height);
+    width: 2px;
+    --c1: rgb(141, 245, 184);
+    --c2: rgb(120, 212, 240);
+    border: 2px solid var(--c1);
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s opacity;
+}
+
+.volume-display::before, .volume-display::after{
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: calc(var(--height) - var(--perc));
+    height: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.volume-display:hover{
+    opacity: 0.8;
+}
+
+.volume-display::before{
+    background: linear-gradient(
+        to bottom,
+        var(--c1),
+        var(--c2)
+    );
+    height: var(--perc);
+}

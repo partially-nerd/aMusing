@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 10px;
+    background: radial-gradient(
+        #000000d8,
+        #000000cb
+    ) fixed center;
+    display: grid;
+    grid-template-columns: 40px auto 200px;
+    overflow: hidden;
+    height: calc(100vh - 20px);
+    border-radius: 9px;
+}
+
+#waveDisplay{
+    z-index: 1;
+    width: 100%;
+}
+
+.ringed-display{
+    z-index: 2;
+}
+
+.ringed-display, #waveDisplay{
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.central-wrapper{
+    position: relative;
+}
+
+.sidebar{
+    --c1: rgb(141, 245, 184);
+    --c2: rgb(120, 212, 240);
+    background: rgba(0,0,0, 0.7);
+    display: grid;
+    height: calc(100% - 20px);
+    grid-template-rows: 20px auto 200px 40px;
+    -webkit-app-region: drag;
+    border-radius: 20px;
+    outline: 2px solid var(--c1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebar-btn, .sidebar-entry{
+    -webkit-app-region: no-drag;
+    border: 0px;
+    outline: none;
+    background: transparent;
+    transition: 0.3s background;
+    color: white;
+    cursor: pointer;
+    width: 40px;
+}
+
+.explorer-item{
+    margin-top: 10px;
+    height: 40px;
+    width: 100%;
+    display: block;
+    background: transparent;
+    border: 2px solid transparent;
+    cursor: pointer;
+    color: rgb(196, 196, 196);
+    outline: none;
+    z-index: 3;
+    transition: 0.3s border, 0.3s color;
+}
+
+.explorer-item:hover{
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.explorer-item:nth-child(1){
+    margin-top: 80px;
+}
+
+#close{
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    margin: 12.5px;
+    background: tomato;
+    color: transparent;
+    transition: 0.3s color;
+    border-radius: 10px;
+}
+
+#close:hover{
+    color: white;
+}
+
+.active-song{
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#searchEtr{
+    width: 200px;
+    transform: rotate(270deg) translate(0%, -40%);
+}

@@ -1,0 +1,14 @@
+{
+  "name": "day 2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "child_process": "1.0.2",
+    "electron": "24.1.2",
+    "youtube-search-api": "^1.1.1"
+  },
+  "scripts": {
+    "run": "C:\\Users\\User\\AppData\\Local\\Yarn\\bin\\electron ."
+  }
+}

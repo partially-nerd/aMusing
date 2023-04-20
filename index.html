@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4</title>
+    <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="widgets/ringedPercentile.css">
+    <link rel="stylesheet" href="widgets/volume-adjust.css">
+    <link rel="stylesheet" href="widgets/pane.css">
+    <script src="dist/audiovisualizer.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="sidebar">
+        <button class="sidebar-btn" id="close" onclick="window.close()">x</button>
+        <span></span>
+        <input type="search" class="sidebar-entry" onkeyup="searchOnline(event)" id="searchEtr" placeholder="🔎︎ Search the web">
+        <button class="search sidebar-btn" id="refresh" onclick="fillExplorer(here)">⟳</button>
+    </div>
+    <div class="central-wrapper">
+        <div class="ringed-display" onclick="startPlaying()" style="--text: '0%'; --angle: 0deg; --rad: 100px"></div>
+        <div id="waveDisplay"></div>
+    </div>
+    <div class="pane-display" id="explorer" style="--height: auto; --label: 'EXPLORER'; --br-w: 5px"></div>
+    <!-- <div class="volume-display" style="--height: 100px; --perc: 70px;"></div> -->
+</body>
+</html>

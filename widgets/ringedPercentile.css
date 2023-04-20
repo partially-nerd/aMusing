@@ -1,0 +1,57 @@
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.ringed-display{
+    height: var(--rad);
+    --c1: rgb(141, 245, 184);
+    --c2: rgb(120, 212, 240);
+    aspect-ratio: 1;
+    background: conic-gradient(
+        from 0deg,
+        var(--c1),
+        var(--c2),
+        var(--c1),
+        var(--c1),
+        transparent var(--angle),
+        transparent
+    );
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+@keyframes ringed-display-hover {
+    80% {
+        --angle: 360deg
+    }
+}
+
+.ringed-display:hover{
+    animation: ringed-display-hover 2s ease-in-out alternate-reverse;
+}
+
+.ringed-display::before{
+    content: '';
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(15px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    height: 90%;
+}
+
+.ringed-display::before, .ringed-display::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.ringed-display::after{
+    content: var(--text);
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+}
