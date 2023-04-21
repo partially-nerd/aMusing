@@ -12,23 +12,23 @@
     <link rel="stylesheet" href="widgets/pane.css">
     <link rel="stylesheet" href="widgets/signup.css">
     <script src="dist/audiovisualizer.js" defer></script>
-    <!-- <script src="script.js" defer></script> -->
-    <script src="scriptUnix.js" defer></script>
+    <script src="script.js" defer></script>
+    <!-- <script src="scriptUnix.js" defer></script> -->
 </head>
 <body>
     <div class="signup">
         <span></span>
         <form action="" class="form">
             <span class="signup-label">A-Musing</span>
-            <input type="text" class="form-entry" name="username" placeholder="Adam">
+            <input required type="text" class="form-entry" name="username" id="username" placeholder="Adam">
             <label for="username">First Name</label>
-            <input type="text" class="form-entry" name="lastname" placeholder="Ondra">
+            <input required type="text" class="form-entry" name="lastname" id="lastname" placeholder="Ondra">
             <label for="username">Last Name</label>
-            <input type="email" class="form-entry" name="email" placeholder="adam.ondra@protonmail.com">
+            <input required type="email" class="form-entry" name="email" id="email" placeholder="adam.ondra@protonmail.com">
             <label for="email">Email</label>
-            <input type="date" class="form-entry" name="dob" id="date">
+            <input required type="date" class="form-entry" name="dob" id="date">
             <label for="dob">Birth Date</label>
-            <button class="submit">Sign Up</button>
+            <button class="submit" onclick="event.preventDefault(); hideForm()">Sign Up</button>
         </form>
     </div>
     <div class="sidebar">
@@ -36,8 +36,10 @@
         <span></span>
         <input type="search" class="sidebar-entry" onkeyup="searchOnline(event)" id="searchEtr" placeholder="🔎︎ Search the web">
         <button class="search sidebar-btn" id="refresh" onclick="fillExplorer(here)">⟳</button>
+        <button class="sidebar-btn" id="logout" onclick="localStorage.clear(); location.reload()">↲↲</button>
     </div>
     <div class="central-wrapper">
+        <div id="greetings"></div>
         <div class="ringed-display" onclick="startPlaying()" style="--text: '0%'; --angle: 0deg; --rad: 100px"></div>
         <div id="waveDisplay"></div>
     </div>

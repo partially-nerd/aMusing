@@ -3,7 +3,7 @@ const $ = x => document.querySelectorAll(x);
 
 let wave = new CircularAudioWave(document.getElementById('waveDisplay'));
 wave.gainNode = wave.context.createGain();
-wave.gainNode.gain.value = 0.1;
+wave.gainNode.gain.setTargetAtTime(0.1, wave.context.currentTime, 0.2);
 wave.gainNode.connect(wave.context.destination);
 wave.sourceNode.connect(wave.gainNode); 
 const currentPosDom = document.querySelector(".ringed-display");
@@ -85,8 +85,30 @@ function pad(n, width, z) {
 }
 month = pad(month, 2)
 day = date.getDate(); 
+const form = $(".signup")[0];
+
 $("#date")[0].value = `${year}-${month}-${day}`; day = date.getDate(); $("#date")[0].value = `${year}-${month}-${day}`
 
-// $(".form-entry").forEach(item => {
-//     el.closest("label");
-// })
+if (localStorage.getItem("AMusername") !== null) {
+    form.style.display = "none";
+    usrname = localStorage.getItem("AMusername");
+    $("#greetings")[0].innerHTML = `Greetings, ${usrname}!`;
+    setTimeout(() => {
+        $("#greetings")[0].style.opacity = "0";
+    }, 1000);
+}
+
+function hideForm() {
+    localStorage.setItem("AMusername", $("#username")[0].value);
+    localStorage.setItem("AMemail", $("#email")[0].value);
+    form.style.opacity = 0;
+    setTimeout(() => {
+        form.style.visibility = "hidden";
+        form.style.display = "none";
+    }, 800);
+    usrname = localStorage.getItem("AMusername");
+    $("#greetings")[0].innerHTML = `Greetings, ${usrname}!`;
+    setTimeout(() => {
+        $("#greetings")[0].style.opacity = "0";
+    }, 1000);
+}

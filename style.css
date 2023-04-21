@@ -40,7 +40,7 @@ body{
     background: rgba(0,0,0, 0.7);
     display: grid;
     height: calc(100% - 20px);
-    grid-template-rows: 20px auto 200px 40px;
+    grid-template-rows: 20px auto 200px 40px 40px;
     -webkit-app-region: drag;
     border-radius: 20px;
     outline: 2px solid var(--c1);
@@ -105,4 +105,14 @@ body{
 #searchEtr{
     width: 200px;
     transform: rotate(270deg) translate(0%, -40%);
+}
+
+#greetings{
+    position: absolute;
+    top: 20px;
+    font-size: 20px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: gray;
+    transition: 0.3s opacity;
 }

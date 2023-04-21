@@ -4,6 +4,7 @@
     z-index: 10;
     background: url("../src/bgSignup.jpg");
     background-size: cover;
+    transition: 0.7s opacity;
 }
 
 .form{
