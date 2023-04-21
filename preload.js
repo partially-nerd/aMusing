@@ -22,5 +22,5 @@ contextBridge.exposeInMainWorld("ytSearch", {
 })
 
 contextBridge.exposeInMainWorld('child_process', {
-    spawn: (args) => spawn.execSync(args, {stdio: "inherit"}),
+    spawn: (args) => spawn.execSync(args, {encoding: "utf8"}).toString()
 })

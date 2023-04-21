@@ -1,4 +1,4 @@
-const USRNAME = "User";
+const USRNAME = child_process.spawn("echo %USERNAME%").split("\r")[0];
 const here = `C:\\Users\\${USRNAME}\\Desktop\\CodeTheFuture\\Day4\\audio\\`
 const $ = x => document.querySelectorAll(x);
 
