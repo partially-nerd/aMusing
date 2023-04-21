@@ -1,4 +1,5 @@
-const here = "C:\\Users\\User\\Desktop\\CodeTheFuture\\Day4\\audio\\"
+const USRNAME = "User";
+const here = `C:\\Users\\${USRNAME}\\Desktop\\CodeTheFuture\\Day4\\audio\\`
 const $ = x => document.querySelectorAll(x);
 
 let wave = new CircularAudioWave(document.getElementById('waveDisplay'));
@@ -14,8 +15,8 @@ const searchOnline = async(e) => {
         res = await ytSearch.search(that.value);
         setTimeout(() => {
             res = res.items[0].id;
-            child_process.spawn(`C:\\Users\\User\\Desktop\\CodeTheFuture\\Day4\\dist\\ytdlp.bat https://www.youtube.com/watch?v=${res}`)
-            console.log(`C:\\Users\\User\\Desktop\\CodeTheFuture\\Day4\\dist\\ytdlp.bat https://www.youtube.com/watch?v=${res}`);
+            child_process.spawn(`C:\\Users\\${USRNAME}\\Desktop\\CodeTheFuture\\Day4\\dist\\ytdlp.bat https://www.youtube.com/watch?v=${res}`)
+            console.log(`C:\\Users\\${USRNAME}\\Desktop\\CodeTheFuture\\Day4\\dist\\ytdlp.bat https://www.youtube.com/watch?v=${res}`);
         }, 2000);
     }
 }
