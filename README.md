@@ -1,4 +1,5 @@
 # A music player w/electron
+![Screenshot (4)](https://user-images.githubusercontent.com/108736691/233554710-f17df9e1-55f2-4787-a632-40cafa2033e4.png)
 
 ## Setup
 ### Dependencies
